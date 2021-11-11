@@ -1,2 +1,4 @@
-import Test from './context';
-export default Test;
+import Context from './context';
+import Redux from './redux';
+
+export default Redux;
