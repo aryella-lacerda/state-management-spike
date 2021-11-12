@@ -24,22 +24,22 @@ export const counterMachine = createMachine<CounterContext, CounterEvent>({
       on: {
         INCREMENT_COUNTER: {
           actions: assign({
-            counter: context => context.counter + 1,
+            counter: context => context.counter + context.skip,
           }),
         },
         DECREMENT_COUNTER: {
           actions: assign({
-            counter: context => context.counter - 1,
+            counter: context => context.counter - context.skip,
           }),
         },
         INCREMENT_SKIP: {
           actions: assign({
-            skip: context => context.counter + context.skip,
+            skip: context => context.skip + 1,
           }),
         },
         DECREMENT_SKIP: {
           actions: assign({
-            skip: context => context.counter - context.skip,
+            skip: context => context.skip - 1,
           }),
         },
       },
