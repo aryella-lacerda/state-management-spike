@@ -9,11 +9,11 @@ const useCounter = () => {
 
   const increment = useCallback(() => {
     setCounter(prevCounter => prevCounter + skip);
-  }, [skip]);
+  }, [setCounter, skip]);
 
   const decrement = useCallback(() => {
     setCounter(prevCounter => prevCounter - skip);
-  }, [skip]);
+  }, [setCounter, skip]);
 
   return {
     counter,
